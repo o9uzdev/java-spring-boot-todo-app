@@ -1,12 +1,13 @@
 package dev.o9uz.labs.todoapp.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="todos")
 public class Todo {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String content;

@@ -1,21 +1,22 @@
 package dev.o9uz.labs.todoapp.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name="users")
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String username;
     private String password;
 
-    @OneToMany
-    private List<Todo> todoList;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Todo> todoList = new ArrayList<>();
 
     public User(Long id, String username, String password, List<Todo> todoList) {
         this.id = id;
