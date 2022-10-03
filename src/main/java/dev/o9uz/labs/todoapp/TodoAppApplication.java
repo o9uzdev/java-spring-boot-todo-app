@@ -26,8 +26,8 @@ public class TodoAppApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		User user = new User();
 		user.setId(1L);
-		user.setPassword("o9uz");
 		user.setUsername("o9uz");
+		user.setPassword("o9uz");
 
 		Todo todo = new Todo();
 		todo.setId(1L);
